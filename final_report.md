@@ -14,8 +14,8 @@
 Submission includes all required files and can be used to run the simulator in autonomous mode
 
 My project includes the following files:
-* model.py containing the script to create and train the model
-* drive.py for driving the car in autonomous mode
+* [model.py] (https://github.com/purnendu23/BehaviouralCloning/blob/master/model_b.h5) script to create and train the model
+* [drive.py] (https://github.com/purnendu23/BehaviouralCloning/blob/master/drive.py) script to drive the car in autonomously
 * model.h5 containing a trained convolution neural network 
 * final_report.md 
 
