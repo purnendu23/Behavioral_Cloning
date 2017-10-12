@@ -7,9 +7,10 @@ Submission includes all required files and can be used to run the simulator in a
 
 My project includes the following files:
 * [You are reading the final report](https://github.com/purnendu23/BehaviouralCloning/edit/master/final_report.md)
-* [model.py](https://github.com/purnendu23/BehaviouralCloning/blob/master/model_b.h5) script to create and train the model
+* [model.py](https://github.com/purnendu23/BehaviouralCloning/blob/master/model.py) script to create and train the model
 * [drive.py](https://github.com/purnendu23/BehaviouralCloning/blob/master/drive.py) script to drive the car in autonomously
 * [model.h5](https://github.com/purnendu23/BehaviouralCloning/blob/master/model.h5) Trained CNN 
+* [Final Recording](https://github.com/purnendu23/Behavioral_Cloning/blob/master/run3.mp4) Autonomous driving car recording
 
 ### Quality of Code
 
