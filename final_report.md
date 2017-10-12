@@ -2,7 +2,7 @@
 
 [//]: # (Image References)
 
-[nvidia_cnn]: <img src="./images/nvidia_cnn.jpg" width="200">
+[nvidia_cnn]: 
 [image2]: ./examples/placeholder.png "Grayscaling"
 [image3]: ./examples/placeholder_small.png "Recovery Image"
 [image4]: ./examples/placeholder_small.png "Recovery Image"
@@ -40,8 +40,7 @@ The model.py file contains the code for training and saving the convolution neur
 
 I have used the [NVidia end-to-end learning model for self driving cars](https://images.nvidia.com/content/tegra/automotive/images/2016/solutions/pdf/end-to-end-dl-using-px.pdf) with some slight changes to fit the problem at hand.
 
-![End to End Learning for Self-Driving Cars][nvidia_cnn]
-
+<img src="./images/nvidia_cnn.jpg" width="400">
 
 #### 2. Attempts to reduce overfitting in the model
 
