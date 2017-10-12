@@ -1,13 +1,6 @@
 # **Behavioral Cloning** 
 
-[//]: # (Image References)
-
-[image2]: ./examples/placeholder.png "Grayscaling"
-[image3]: ./examples/placeholder_small.png "Recovery Image"
-[image4]: ./examples/placeholder_small.png "Recovery Image"
-[image5]: ./examples/placeholder_small.png "Recovery Image"
-[image6]: ./examples/placeholder_small.png "Normal Image"
-[image7]: ./examples/placeholder_small.png "Flipped Image"
+---
 
 ### Required Files
 Submission includes all required files and can be used to run the simulator in autonomous mode
@@ -67,7 +60,7 @@ I then change the code to augment the data with flipped images so that the car c
 Now the network was able to train faster and car was driving much better.
 I play around with the parameters to fix the batch size at 128 and epoch# 5 to get a very good result. The car was able to drive one complete lap. The good and bad thing at this stage was that it would sometimes veer onto the side of the road, but then recover (Road hazard for simulator pedestrians).
 
-Finally I reallized that perhaps my training data itself is not very good, because I had made a lot errors while driving recklessly and went over the banks several times (_unsucessful runs_ [1](https://github.com/purnendu23/Behavioral_Cloning/blob/master/run1.mp4)[2](https://github.com/purnendu23/Behavioral_Cloning/blob/master/run2.mp4)). At this stage, I drive the car again to get some fresh training data and use that.
+Finally I reallized that perhaps my training data itself is not very good, because I had made a lot errors while driving recklessly and went over the banks several times (_unsucessful runs_ [1](https://github.com/purnendu23/Behavioral_Cloning/blob/master/run1.mp4) and [2](https://github.com/purnendu23/Behavioral_Cloning/blob/master/run2.mp4)). At this stage, I drive the car again to get some fresh training data and use that.
 
 At the end of this process, the vehicle is able to drive autonomously around the track without leaving the road.
 
