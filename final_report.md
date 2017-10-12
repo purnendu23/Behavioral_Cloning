@@ -2,7 +2,7 @@
 
 [//]: # (Image References)
 
-[[nvidia_cnn]]: ./images/placeholder.png "Model Visualization"
+[nvidia_cnn]: ./images/nvidia_cnn.jpg "Model Arch"
 [image2]: ./examples/placeholder.png "Grayscaling"
 [image3]: ./examples/placeholder_small.png "Recovery Image"
 [image4]: ./examples/placeholder_small.png "Recovery Image"
