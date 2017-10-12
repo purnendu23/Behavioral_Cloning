@@ -75,6 +75,8 @@ At the end of this process, the vehicle is able to drive autonomously around the
 
 The final model architecture (model.py lines 12-24) consisted of a convolution neural network with the following layers:
 
+<img src="./images/my_cnn_code.jpg" width="400">
+
 
 #### 3. Creation of the Training Set & Training Process
 
