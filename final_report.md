@@ -67,7 +67,7 @@ I then change the code to augment the data with flipped images so that the car c
 Now the network was able to train faster and car was driving much better.
 I play around with the parameters to fix the batch size at 128 and epoch# 5 to get a very good result. The car was able to drive one complete lap. The good and bad thing at this stage was that it would sometimes veer onto the side of the road, but then recover (Road hazard for simulator pedestrians).
 
-Finally I reallized that perhaps my training data itself is not very good, because I had made a lot errors while driving recklessly and went over the banks several times. At this stage, I drive the car again to get some fresh training data and use that.
+Finally I reallized that perhaps my training data itself is not very good, because I had made a lot errors while driving recklessly and went over the banks several times (_unsucessful runs_ [1](https://github.com/purnendu23/Behavioral_Cloning/blob/master/run1.mp4)[2](https://github.com/purnendu23/Behavioral_Cloning/blob/master/run2.mp4)). At this stage, I drive the car again to get some fresh training data and use that.
 
 At the end of this process, the vehicle is able to drive autonomously around the track without leaving the road.
 
@@ -80,32 +80,9 @@ The final model architecture (model.py lines 12-24) consisted of a convolution n
 
 #### 3. Creation of the Training Set & Training Process
 
-To capture good driving behavior, I first recorded two laps on track one using center lane driving. Here is an example image of center lane driving:
-
-![alt text][image2]
-
-I then recorded the vehicle recovering from the left side and right sides of the road back to center so that the vehicle would learn to .... These images show what a recovery looks like starting from ... :
-
-![alt text][image3]
-![alt text][image4]
-![alt text][image5]
-
-Then I repeated this process on track two in order to get more data points.
-
-To augment the data sat, I also flipped images and angles thinking that this would ... For example, here is an image that has then been flipped:
-
-![alt text][image6]
-![alt text][image7]
-
-Etc ....
-
-After the collection process, I had X number of data points. I then preprocessed this data by ...
-
-
-I finally randomly shuffled the data set and put Y% of the data into a validation set. 
-
-I used this training data for training the model. The validation set helped determine if the model was over or under fitting. The ideal number of epochs was Z as evidenced by ... I used an adam optimizer so that manually training the learning rate wasn't necessary.
-
-### Architecture and Training Documentation
+I collected the training data by driving the car for more than one lap. Initially the training data was not good enough for training because of my poor driving skills which caused the model to learn poorly. However, I recorded the training data a second time to correct this.
 
 ### Simulation
+
+drive.py is able to automomously drive the car in the simulator using model.h file and it goes around more than 1 lap. 
+I recorded this [drive](https://github.com/purnendu23/Behavioral_Cloning/blob/master/run3.mp4) and is part of this submission.
