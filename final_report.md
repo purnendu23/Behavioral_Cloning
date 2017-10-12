@@ -1,6 +1,5 @@
 # **Behavioral Cloning** 
 
----
 
 ### Required Files
 Submission includes all required files and can be used to run the simulator in autonomous mode
