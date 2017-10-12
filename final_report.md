@@ -37,48 +37,43 @@ The model.py file contains the code for training and saving the convolution neur
 
 #### 1. Model architecture
 
-I have used the [NVidia end-to-end learning model for self driving cars](https://images.nvidia.com/content/tegra/automotive/images/2016/solutions/pdf/end-to-end-dl-using-px.pdf) with some slight changes to fit the problem at hand.
+I have used the [NVidia end-to-end learning model for self driving cars](https://images.nvidia.com/content/tegra/automotive/images/2016/solutions/pdf/end-to-end-dl-using-px.pdf) with some slight changes to fit the problem at hand. The figure below shows the original model
 
 <img src="./images/nvidia_cnn.jpg" width="400">
 
-#### 2. Attempts to reduce overfitting in the model
+A cropping layer was added after the normalization layer. This network which now consists of 10 layers, starts with a normalization layer, followed by a cropping layer, 5 convolutional layers and finally 3 fully connected layers leading to the output. (model.py cell:4 line:12-24)
 
-The model contains dropout layers in order to reduce overfitting (model.py lines 21). 
+The second layer of the network (cropping layer) was added by me to crop each training image by 50 pixels from the top and 20 pixels from the botton. 
 
-The model was trained and validated on different data sets to ensure that the model was not overfitting (code line 10-16). The model was tested by running it through the simulator and ensuring that the vehicle could stay on the track.
+#### 2. Reduce overfitting in the model
+
+The model was trained on a training set and then validated using a validation set to ensure that the model was not overfitting. The model was finally tested by running it through the simulator to drive the car autonomously.
 
 #### 3. Model parameter tuning
 
-The model used an adam optimizer, so the learning rate was not tuned manually (model.py line 25).
+The model used an adam optimizer (learning rate was not tuned manually) and mean square error(mse) as loss metrics,  (model.py cell:4 line:27)
 
 #### 4. Appropriate training data
 
-Training data was chosen to keep the vehicle driving on the road. I used a combination of center lane driving, recovering from the left and right sides of the road ... 
-
-For details about how I created the training data, see the next section. 
-
+I used training data from driving the car for several laps (~ 25209 images were recorded). I augment the trainig and validation batches (using the `augment_images(images, measurements)`) to get sufficient samples for right turns because there is disproportionate higher number of left turns in the data collected which would lead to biased training.
 
 ### Model Architecture and Training Strategy
 
 #### 1. Solution Design Approach
 
-The overall strategy for deriving a model architecture was to ...
+I straight away started with the Nvidia self-driving car network. I do not add the cropping layer or use data augmentation for preprocessing the data at this stage. However I use all three(center, left and right) camera angle images to train the model with the correction factor added and subtracted to the steering angle for left and right camera images respectively.
+As a result the car just drives itself! However, it tends to turn left almost always and gets stuck immediately on the side-banks.
+I then change the code to augment the data with flipped images so that the car can also train for right-side turning. At this stage I also define the generator (`generator(samples, batch_size)`) to make training faster.
+Now the network was able to train faster and car was driving much better.
+I play around with the parameters to fix the batch size at 128 and epoch# 5 to get a very good result. The car was able to drive one complete lap. The good and bad thing at this stage was that it would sometimes veer onto the side of the road, but then recover (Road hazard for simulator pedestrians).
 
-My first step was to use a convolution neural network model similar to the ... I thought this model might be appropriate because ...
+Finally I reallized that perhaps my training data itself is not very good, because I had made a lot errors while driving recklessly and went over the banks several times. At this stage, I drive the car again to get some fresh training data and use that.
 
-In order to gauge how well the model was working, I split my image and steering angle data into a training and validation set. I found that my first model had a low mean squared error on the training set but a high mean squared error on the validation set. This implied that the model was overfitting. 
-
-To combat the overfitting, I modified the model so that ...
-
-Then I ... 
-
-The final step was to run the simulator to see how well the car was driving around track one. There were a few spots where the vehicle fell off the track... to improve the driving behavior in these cases, I ....
-
-At the end of the process, the vehicle is able to drive autonomously around the track without leaving the road.
+At the end of this process, the vehicle is able to drive autonomously around the track without leaving the road.
 
 #### 2. Final Model Architecture
 
-The final model architecture (model.py lines 18-24) consisted of a convolution neural network with the following layers and layer sizes ...
+The final model architecture (model.py lines 18-24) consisted of a convolution neural network with the following layers and layer sizes
 
 Here is a visualization of the architecture (note: visualizing the architecture is optional according to the project rubric)
 
